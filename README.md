@@ -86,7 +86,11 @@ Stefan Hauser (Project Manager Climbax)
 Florian Eggert (Start Hack Coordinator)
 
 ### Time Slots at the Booth (CET)
-We will be available at the booth for questions on our case at
+We will be available at the booth at https://live.startsummit.ch/participations/55540
+or the discord audio channel mammut-case-talk
+https://discord.com/channels/807632986370998332/821024146921095218
+for questions on our case at
+
 Friday, March 19th, 22h-23h
 
 Saturday, March 20th, 10h-11h
@@ -95,6 +99,8 @@ Saturday, March 20th, 16h-16.30h
 Saturday, March 20th, 19h-20h
 
 Sunday, March 21st, 8h-9h
+
+You can of course try to reach us at any time during the hack weekend on discord DM.
 
 ### Prize
 The winning team will get to choose from 4 Mammut products:
