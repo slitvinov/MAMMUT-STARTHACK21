@@ -85,7 +85,7 @@ Cassim Ladha (Data Analysis + Mobile Application "Mammut Climb" Lead)
 Stefan Hauser (Project Manager Climbax)
 Florian Eggert (Start Hack Coordinator)
 
-### Time Slots at the Booth
+### Time Slots at the Booth (CET)
 We will be available at the booth for questions on our case at
 Friday, March 19th, 22h-23h
 
