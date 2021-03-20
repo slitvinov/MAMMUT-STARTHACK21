@@ -58,16 +58,17 @@ for i in range(300):
         h1 = -g01
         h2 = -g02
         h3 = -g03
-        file.write("OFF\n")
-        file.write("4 4 0\n")
-        file.write("%g %g %g\n" % (r0[0], r0[1], r0[2]))
-        file.write("%g %g %g\n" % (r1[0], r1[1], r1[2]))
-        file.write("%g %g %g\n" % (r2[0], r2[1], r2[2]))
-        file.write("%g %g %g\n" % (r3[0], r3[1], r3[2]))
-        file.write("3 0 1 2\n")
-        file.write("3 0 2 3\n")
-        file.write("3 0 3 1\n")
-        file.write("3 1 2 3\n")
+        with open("%05d.off" % i, "w") as file:
+            file.write("OFF\n")
+            file.write("4 4 0\n")
+            file.write("%g %g %g\n" % (r0[0], r0[1], r0[2]))
+            file.write("%g %g %g\n" % (r1[0], r1[1], r1[2]))
+            file.write("%g %g %g\n" % (r2[0], r2[1], r2[2]))
+            file.write("%g %g %g\n" % (r3[0], r3[1], r3[2]))
+            file.write("3 0 1 2\n")
+            file.write("3 0 2 3\n")
+            file.write("3 0 3 1\n")
+            file.write("3 1 2 3\n")
 
 
 print(np.linalg.norm(r1 - r0))
