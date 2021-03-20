@@ -1,8 +1,5 @@
 #!/bin/sh
 
 set -e
-if test $# -eq 1; then l=$1; else l='overhang traverse vertical'; fi
-
-for i in $l
-do ffmpeg -loglevel fatal -i data/$i/[A-Z]*.mp4 -vf fps=10 %04d.ppm
-done
+mkdir -p "$2"
+ffmpeg -loglevel fatal -i data/$1/[A-Z]*.mp4 -vf fps=10 "$2/%04d.ppm"

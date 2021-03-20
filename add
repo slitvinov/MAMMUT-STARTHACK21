@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -eu
+
+i=$1; shift
+d=$1; shift
+h=l
+
+o=`./origin $i | awk '{print $2}'`
+v=`./video $i | awk '{print $2}'`
+f=56
+fps=10
+mkdir -p "$d"
+
+for frame
+do
+f0=`echo $frame | awk 'sub(/.*\//, "") && sub(/\.[^\.]*/, "") {print $0}'`
+f=`echo $f0 | awk '{printf "%.16e\n", $0}'`
+gnuplot <<!
+set term png size 640, 200
+set output "$d/$f0.png"
+set xrange [$o:$o+$v]
+set yrange [-2:2]
+set xtics ("Current" ($o+$f/$fps))
+unset key
+s = "<./text.py $i.h5 $h"
+plot s u (\$0*0.02):1 w l lt rgb "red", \
+     s u (\$0*0.02):2 w l lt rgb "green", \
+     s u (\$0*0.02):3 w l lt rgb  "blue"
+!
+
+done
