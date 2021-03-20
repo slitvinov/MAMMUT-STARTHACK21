@@ -2,7 +2,7 @@
 
 <p align="center"><img src="hand.png"/></p>
 
-[vertical](out/vertical.mp4)
+[vertical](https://n.ethz.ch/~lisergey/vertical.mp4)
 
 
 ```
