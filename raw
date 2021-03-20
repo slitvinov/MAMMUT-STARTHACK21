@@ -1,0 +1,5 @@
+#!/bin/sh
+
+for i in overhang traverse vertical
+do ./explore.py $i.h5 l | awk 'END {print "'$i'", NR/50}'
+done
