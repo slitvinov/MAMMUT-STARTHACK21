@@ -1,0 +1,5 @@
+#!/bin/sh
+
+for i in overhang traverse vertical
+do awk 'sub(/.*TIME_ORIGIN="/, "") && sub(/".*/, "") {print "'$i'", $0/1000}' data/$i/$i.eaf
+done
