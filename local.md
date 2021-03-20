@@ -3,7 +3,7 @@
 
 ```
 ./frame vertical a
-./add vertical b a/*.ppm
+./add vertical b c a/*.ppm
 ```
 
 # Sync

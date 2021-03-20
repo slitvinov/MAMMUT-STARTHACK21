@@ -4,12 +4,13 @@ set -eu
 
 i=$1; shift
 d=$1; shift
+c=$1; shift
 
 o=`./origin $i | awk '{print $2}'`
 v=`./video $i | awk '{print $2}'`
 f=56
 fps=10
-mkdir -p "$d" c
+mkdir -p "$d" $c
 ./text.py $i.h5 l > .l
 ./text.py $i.h5 r > .r
 
@@ -38,6 +39,6 @@ plot s u (\$0*0.02):1 w l lt rgb "#0ffdff", \
      s u (\$0*0.02):2 w l lt rgb "#fa652b", \
      s u (\$0*0.02):3 w l lt rgb "#19ff68"
 !
-convert +append $frame $d/$f0.png c/$f0.png
+convert +append $frame $d/$f0.png $c/$f0.png
 
 done
