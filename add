@@ -4,29 +4,36 @@ set -eu
 
 i=$1; shift
 d=$1; shift
-h=l
 
 o=`./origin $i | awk '{print $2}'`
 v=`./video $i | awk '{print $2}'`
 f=56
 fps=10
-mkdir -p "$d"
+mkdir -p "$d" c
 
 for frame
 do
 f0=`echo $frame | awk 'sub(/.*\//, "") && sub(/\.[^\.]*/, "") {print $0}'`
 f=`echo $f0 | awk '{printf "%.16e\n", $0}'`
 gnuplot <<!
-set term png size 640, 200
+set term png size 360, 640
 set output "$d/$f0.png"
+set multiplot layout 2, 1
 set xrange [$o:$o+$v]
 set yrange [-2:2]
-set xtics ("Current" ($o+$f/$fps))
 unset key
-s = "<./text.py $i.h5 $h"
+unset xtics
+s = "<./text.py $i.h5 l"
+plot s u (\$0*0.02):1 w l lt rgb "red", \
+     s u (\$0*0.02):2 w l lt rgb "green", \
+     s u (\$0*0.02):3 w l lt rgb  "blue"
+
+set xtics ("Current" ($o+$f/$fps))
+s = "<./text.py $i.h5 r"
 plot s u (\$0*0.02):1 w l lt rgb "red", \
      s u (\$0*0.02):2 w l lt rgb "green", \
      s u (\$0*0.02):3 w l lt rgb  "blue"
 !
+convert +append $frame $d/$f0.png c/$f0.png
 
 done

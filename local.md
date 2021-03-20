@@ -1,3 +1,11 @@
+
+# Add
+
+```
+./frame vertical a
+./add vertical b a/*.ppm
+```
+
 # Sync
 
 ```
