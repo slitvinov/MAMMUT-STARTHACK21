@@ -13,6 +13,7 @@ do for h in l r
       set xtics 120
       set xtics add ("Origin" $o)
       set xtics add ("End" $o + $v)
+      set yrange [-6:6]
       s = "<./text.py $i.h5 $h"
       plot s u (\$0*0.02):1 w d lt rgb "red" t "AP", \
 	   s u (\$0*0.02):2 w d lt rgb "green" t "UR", \

@@ -1,8 +1,10 @@
 #!/bin/sh
 
-: ${1=overhang traverse vertical}
+set -e
 
-for i in $1
+if test $# -eq 1; then l=$1; else l='overhang traverse vertical'; fi
+
+for i in $l
 do ffmpeg -i data/$i/[A-Z]*.mp4 2>&1 | awk -F: '
 sub(/.*Duration: /, "") && sub(/,.*/, "") {
     print "'$i'", 60 * $2 + $3
