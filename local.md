@@ -1,12 +1,14 @@
+# Sync
 
-# Add
+<p align="center"><img src="hand.png"/></p>
+
+[vertical](out/vertical.mp4)
+
 
 ```
 ./frame vertical a
 ./add vertical b c a/*.ppm
 ```
-
-# Sync
 
 ```
 $ ./video
