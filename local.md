@@ -2,7 +2,9 @@
 
 <p align="center"><img src="hand.png"/></p>
 
-[vertical](https://n.ethz.ch/~lisergey/vertical.mp4)
+[vertical](https://n.ethz.ch/~lisergey/vertical.mp4)</br>
+[traverse](https://n.ethz.ch/~lisergey/traverse.mp4)</br>
+[overhang](https://n.ethz.ch/~lisergey/overhang.mp4)
 
 
 ```
