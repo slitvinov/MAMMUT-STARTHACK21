@@ -17,7 +17,7 @@ the user can easily interpreted it. Advantages
 </br>
 [<img src="img/overhang.png" width=384>](https://n.ethz.ch/~lisergey/overhang.mp4)
 </br>
-[<img src="img/overhang.png" width=384>](https://n.ethz.ch/~lisergey/traverse.mp4)
+[<img src="img/traverse.png" width=384>](https://n.ethz.ch/~lisergey/traverse.mp4)
 </br>
 
 # Software
