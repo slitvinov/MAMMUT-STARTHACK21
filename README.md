@@ -13,12 +13,15 @@ the user can easily interpreted it. Advantages
 # Video
 
 <p align="center"><img src="hand.png"/></p>
-[<img src="img/vertical.png" width=384>](https://n.ethz.ch/~lisergey/vertical.mp4)</br>
-[<img src="img/overhang.png" width=384>](https://n.ethz.ch/~lisergey/overhang.mp4)</br>
-[<img src="img/overhang.png" width=384>](https://n.ethz.ch/~lisergey/traverse.mp4)</br>
+[<img src="img/vertical.png" width=384>](https://n.ethz.ch/~lisergey/vertical.mp4)
+</br>
+[<img src="img/overhang.png" width=384>](https://n.ethz.ch/~lisergey/overhang.mp4)
+</br>
+[<img src="img/overhang.png" width=384>](https://n.ethz.ch/~lisergey/traverse.mp4)
+</br>
 
-# Processing
+# Software
 
-```
-./frame vertical a && ./add vertical b c a/*.ppm
-```
+# Dependencies
+
+shell, python (numpy, h5py), gnuplot, ffmpeg
