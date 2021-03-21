@@ -19,6 +19,7 @@ except OSError:
 try:
     hand = sys.argv.pop(0)
     acc = f[{"l" : "acc_LH", "r" : "acc_RH"}[hand]]
+    pressure = f[{"l" : "pres_LH", "r" : "pres_RH"}[hand]]
 except IndexError:
     sys.stderr.write("explore.py: needs l or r\n")
     sys.exit(2)
@@ -28,9 +29,10 @@ except KeyError:
 AP = acc["AP"]
 UR = acc["UR"]
 DP = acc["DP"]
+P = pressure["pres"]
 for i in range(AP.size):
     try:
-        print("%.16e %.16e %.16e" % (AP[i], UR[i], DP[i]))
+        print("%.16e %.16e %.16e %.16e" % (AP[i], UR[i], DP[i], P[i]))
     except BrokenPipeError:
         sys.exit(0)
         

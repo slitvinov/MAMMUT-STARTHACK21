@@ -13,6 +13,7 @@ fps=10
 mkdir -p "$d" $c
 ./text.py $i.h5 l > .l
 ./text.py $i.h5 r > .r
+h0=`awk 'NR == 1 {print $4; exit}' .l`
 
 for frame
 do
@@ -28,16 +29,20 @@ set yrange [-2:2]
 unset key
 unset xtics
 set xtics ("Current" ($o+$f/$fps))
+set ytics nomirror
+set y2tics
 
 s = ".l"
 plot s u (\$0*0.02):1 w l lt rgb "#0ffdff", \
      s u (\$0*0.02):2 w l lt rgb "#fa652b", \
-     s u (\$0*0.02):3 w l lt rgb "#19ff68"
+     s u (\$0*0.02):3 w l lt rgb "#19ff68", \
+     s u (\$0*0.02):(($h0 - \$4)/100*8) w l axes x1y2
 
 s = ".r"
 plot s u (\$0*0.02):1 w l lt rgb "#0ffdff", \
      s u (\$0*0.02):2 w l lt rgb "#fa652b", \
-     s u (\$0*0.02):3 w l lt rgb "#19ff68"
+     s u (\$0*0.02):3 w l lt rgb "#19ff68", \
+     s u (\$0*0.02):(($h0 - \$4)/100*8 - 2) w l axes x1y2     
 !
 convert +append $frame $d/$f0.png $c/$f0.png
 
